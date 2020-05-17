@@ -8,12 +8,16 @@ export default function ToDoForm({addToDoHandler}) {
       <TextInput
         placeholder="New To Do.."
         style={styles.toDoInput}
+        value = {newToDo}
         onChangeText={val=>setNewToDo(val)}
       />
       <Button
         style={styles.submitButtom}
         title="Create To Do" 
-        onPress={()=>addToDoHandler(newToDo)}
+        onPress={()=>{
+          addToDoHandler(newToDo);
+          setNewToDo('')
+        }}
       />
     </View>
   );
